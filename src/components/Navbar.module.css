@@ -1,0 +1,44 @@
+.cabecalho {
+  background: #243b53;
+  color: white;
+  padding: 18px 0;
+}
+
+.conteudo {
+  width: min(900px, 92%);
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.menu {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.menu a {
+  color: #e5edf5;
+  text-decoration: none;
+}
+
+.menu a:hover,
+.menu a.active {
+  color: white;
+  text-decoration: underline;
+}
+
+@media (max-width: 520px) {
+  .conteudo {
+    flex-direction: column;
+  }
+}

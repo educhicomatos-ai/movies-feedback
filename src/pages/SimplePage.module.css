@@ -1,0 +1,10 @@
+.pagina {
+  background: white;
+  border: 1px solid #dce3ea;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.pagina a {
+  color: #243b53;
+}

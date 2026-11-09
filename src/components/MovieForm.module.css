@@ -1,0 +1,36 @@
+.formulario {
+  background: white;
+  border: 1px solid #dce3ea;
+  border-radius: 8px;
+  padding: 22px;
+  display: grid;
+  gap: 16px;
+}
+
+.formulario label {
+  display: grid;
+  gap: 7px;
+  font-weight: bold;
+}
+
+.formulario input,
+.formulario select {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #bdc8d3;
+  border-radius: 5px;
+  background: white;
+}
+
+.formulario button {
+  border: 0;
+  border-radius: 5px;
+  background: #243b53;
+  color: white;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.formulario button:hover {
+  background: #345675;
+}

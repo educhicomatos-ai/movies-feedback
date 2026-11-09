@@ -1,0 +1,8 @@
+.app {
+  min-height: 100vh;
+}
+
+.conteudo {
+  width: min(900px, 92%);
+  margin: 32px auto;
+}

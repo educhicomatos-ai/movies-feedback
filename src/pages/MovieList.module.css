@@ -1,0 +1,47 @@
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.topo h1 {
+  margin-bottom: 7px;
+}
+
+.topo p {
+  margin-top: 0;
+  color: #617080;
+}
+
+.botao {
+  background: #243b53;
+  color: white;
+  padding: 11px 14px;
+  border-radius: 5px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.busca {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #bdc8d3;
+  border-radius: 5px;
+  margin-bottom: 18px;
+}
+
+.vazio {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  color: #617080;
+}
+
+@media (max-width: 520px) {
+  .topo {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
