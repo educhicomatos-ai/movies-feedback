@@ -1,24 +1,31 @@
 # Movies Feedback
 
-Aplicação React para cadastrar e organizar filmes assistidos ou que você deseja assistir.
+Projeto de catálogo de filmes feito com React.
 
 ## Como executar
 
-```bash
-npm install
-npm run dev
-```
+1. Abra a pasta do projeto no VS Code.
+2. No terminal, execute `npm install`.
+3. Crie uma conta/chave gratuita na página da OMDb: https://www.omdbapi.com/apikey.aspx
+4. Faça uma cópia do arquivo `.env.example` e renomeie a cópia para `.env.local`.
+5. No `.env.local`, coloque sua chave depois do sinal de igual:
 
-## Funcionalidades
+   `VITE_OMDB_API_KEY=sua_chave_aqui`
 
-- Cadastrar filmes com nome, gênero, ano e status de assistido.
-- Listar, pesquisar, editar e excluir filmes.
-- Persistir a lista no `localStorage` do navegador.
+6. Execute `npm run dev` e abra o endereço mostrado no terminal.
 
-## Rotas
+## O que o projeto faz
 
-- `/` e `/filmes` — lista de filmes.
-- `/adicionar` — cadastro de filme.
-- `/editar/:id` — edição de filme.
-- `/sobre` — informações do projeto.
-- Qualquer rota inexistente — página de erro.
+- Pesquisa filmes na OMDb usando `fetch`.
+- Mostra carregamento e mensagens quando ocorre algum erro.
+- Permite adicionar filmes encontrados à lista pessoal.
+- Permite cadastrar, editar, listar, filtrar e excluir filmes.
+- Guarda a lista no `localStorage`, então ela continua salva depois de atualizar a página.
+- Usa React Router para navegar entre as páginas.
+- Usa CSS Modules para os estilos.
+
+## Como a API funciona
+
+A pesquisa usa o parâmetro `s` da OMDb para encontrar títulos. Quando você escolhe um resultado, o projeto faz outra consulta usando o `imdbID` (`i`) para buscar os detalhes, como gênero, diretor, sinopse e pôster.
+
+**Observação para apresentação:** a chave colocada em uma aplicação React aparece no navegador. Para um projeto escolar/demonstração está tudo bem, mas em um sistema publicado de verdade o ideal é esconder a chave em um servidor.

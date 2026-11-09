@@ -45,11 +45,11 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<MovieList filmes={filmes} aoExcluir={excluirFilme} />}
+            element={<MovieList filmes={filmes} aoExcluir={excluirFilme} aoAdicionar={adicionarFilme} />}
           />
           <Route
             path="/filmes"
-            element={<MovieList filmes={filmes} aoExcluir={excluirFilme} />}
+            element={<MovieList filmes={filmes} aoExcluir={excluirFilme} aoAdicionar={adicionarFilme} />}
           />
           <Route
             path="/adicionar"

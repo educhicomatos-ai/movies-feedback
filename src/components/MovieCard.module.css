@@ -10,6 +10,15 @@
   margin-bottom: 12px;
 }
 
+.poster {
+  width: 82px;
+  max-height: 125px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.informacoes { flex: 1; min-width: 0; }
+
 .card h2 {
   font-size: 1.15rem;
   margin: 0 0 7px;
