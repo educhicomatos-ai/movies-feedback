@@ -2,62 +2,70 @@ import { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar.jsx'
 import About from './pages/AboutControl.jsx'
-import MovieFormPage from './pages/MovieFormPage.jsx'
-import MovieList from './pages/MovieList.jsx'
+import GameCatalog from './pages/GameCatalog.jsx'
+import MyGames from './pages/MyGames.jsx'
 import NotFound from './pages/NotFound.jsx'
 import styles from './App.module.css'
 
-const filmesIniciais = [
-  { id: '1', nome: 'Interestelar', genero: 'Ficção científica', ano: '2014', assistido: true },
-  { id: '2', nome: 'O Rei Leão', genero: 'Animação', ano: '1994', assistido: false },
-]
-
-function carregarFilmes() {
-  const dadosSalvos = localStorage.getItem('filmes')
-  return dadosSalvos ? JSON.parse(dadosSalvos) : filmesIniciais
-}
-
 function App() {
-  const [filmes, setFilmes] = useState(carregarFilmes)
+  const [jogos, setJogos] = useState(() => {
+    const jogosSalvos = localStorage.getItem('jogos')
+    return jogosSalvos ? JSON.parse(jogosSalvos) : []
+  })
 
   useEffect(() => {
-    localStorage.setItem('filmes', JSON.stringify(filmes))
-  }, [filmes])
+    localStorage.setItem('jogos', JSON.stringify(jogos))
+  }, [jogos])
 
-  function adicionarFilme(novoFilme) {
-    setFilmes((atuais) => [...atuais, { ...novoFilme, id: crypto.randomUUID() }])
+  function adicionarJogo(jogo) {
+    setJogos((atuais) => {
+      if (atuais.some((item) => item.id === jogo.id)) return atuais
+      return [...atuais, { ...jogo, avaliacao: 0 }]
+    })
   }
 
-  function editarFilme(filmeAtualizado) {
-    setFilmes((atuais) =>
-      atuais.map((filme) => (filme.id === filmeAtualizado.id ? filmeAtualizado : filme)),
+  function criarJogo(jogo) {
+    setJogos((atuais) => [...atuais, { ...jogo, id: `meu-jogo-${Date.now()}`, avaliacao: 0 }])
+  }
+
+  function editarJogo(jogoAtualizado) {
+    setJogos((atuais) =>
+      atuais.map((jogo) =>
+        jogo.id === jogoAtualizado.id ? { ...jogo, ...jogoAtualizado } : jogo,
+      ),
     )
   }
 
-  function excluirFilme(id) {
-    setFilmes((atuais) => atuais.filter((filme) => filme.id !== id))
+  function removerJogo(id) {
+    setJogos((atuais) => atuais.filter((jogo) => jogo.id !== id))
+  }
+
+  function avaliarJogo(id, nota) {
+    setJogos((atuais) =>
+      atuais.map((jogo) => (jogo.id === id ? { ...jogo, avaliacao: nota } : jogo)),
+    )
   }
 
   return (
     <div className={styles.app}>
-      <Navbar nome="Movies Feedback" />
+      <Navbar nome="Jogos & Avaliações" />
       <main className={styles.conteudo}>
         <Routes>
           <Route
             path="/"
-            element={<MovieList filmes={filmes} aoExcluir={excluirFilme} aoAdicionar={adicionarFilme} />}
+            element={<GameCatalog jogos={jogos} aoAdicionar={adicionarJogo} />}
           />
           <Route
-            path="/filmes"
-            element={<MovieList filmes={filmes} aoExcluir={excluirFilme} aoAdicionar={adicionarFilme} />}
-          />
-          <Route
-            path="/adicionar"
-            element={<MovieFormPage filmes={filmes} aoSalvar={adicionarFilme} />}
-          />
-          <Route
-            path="/editar/:id"
-            element={<MovieFormPage filmes={filmes} aoSalvar={editarFilme} />}
+            path="/lista"
+            element={
+              <MyGames
+                jogos={jogos}
+                aoCriar={criarJogo}
+                aoEditar={editarJogo}
+                aoRemover={removerJogo}
+                aoAvaliar={avaliarJogo}
+              />
+            }
           />
           <Route path="/sobre" element={<About />} />
           <Route path="*" element={<NotFound />} />

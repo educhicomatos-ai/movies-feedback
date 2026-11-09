@@ -1,0 +1,74 @@
+.card {
+  overflow: hidden;
+  background: white;
+  border: 1px solid #dce3ea;
+  border-radius: 8px;
+}
+
+.imagem {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #dce3ea;
+}
+
+.informacoes {
+  padding: 14px;
+}
+
+.informacoes h2 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+.informacoes p {
+  margin: 0 0 8px;
+  color: #617080;
+}
+
+.botao, .linkJogo, .botaoEditar {
+  display: inline-block;
+  margin: 8px 8px 0 0;
+  padding: 9px 12px;
+  border: 0;
+  border-radius: 5px;
+  background: #243b53;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.botaoEditar {
+  background: #e7eef7;
+  color: #243b53;
+}
+
+.linkJogo {
+  background: #e7eef7;
+  color: #243b53;
+}
+
+.avaliacao {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 10px 0;
+  color: #617080;
+  font-size: 0.9rem;
+}
+
+.estrela, .estrelaAtiva {
+  padding: 0 2px;
+  border: 0;
+  background: none;
+  color: #aab4bf;
+  cursor: pointer;
+  font-size: 1.35rem;
+}
+
+.estrelaAtiva {
+  color: #e3a008;
+}

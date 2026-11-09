@@ -7,8 +7,8 @@ function Navbar({ nome }) {
       <div className={styles.conteudo}>
         <Link to="/" className={styles.logo}>{nome}</Link>
         <nav className={styles.menu} aria-label="Navegação principal">
-          <NavLink to="/">Início</NavLink>
-          <NavLink to="/adicionar">Adicionar filme</NavLink>
+          <NavLink to="/">Catálogo</NavLink>
+          <NavLink to="/lista">Minha lista</NavLink>
           <NavLink to="/sobre">Sobre</NavLink>
         </nav>
       </div>

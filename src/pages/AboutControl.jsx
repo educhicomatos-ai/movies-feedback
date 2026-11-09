@@ -5,9 +5,10 @@ function About() {
     <section className={styles.pagina}>
       <h1>Sobre o projeto</h1>
       <p>
-        O Movies Feedback é uma aplicação para cadastrar e organizar os filmes
-        que já foram assistidos ou que ainda queremos assistir.
+        Jogos & Avaliações usa uma API pública para mostrar jogos gratuitos.
+        Você pode montar uma lista pessoal e dar uma nota de uma a cinco estrelas.
       </p>
+      <p>A lista e as avaliações ficam salvas no navegador.</p>
       <p>Projeto desenvolvido para a disciplina de Programação Web II.</p>
     </section>
   )
