@@ -1,3 +1,4 @@
+/* Espaço entre o título/introdução e o restante do catálogo. */
 .topo {
   margin-bottom: 20px;
 }
@@ -6,10 +7,12 @@
   margin-bottom: 8px;
 }
 
+/* Cor mais suave para textos secundários e mensagens informativas. */
 .topo p, .mensagem {
   color: #617080;
 }
 
+/* Campo de pesquisa e seu rótulo, organizados em coluna. */
 .rotuloBusca {
   display: grid;
   gap: 8px;
@@ -25,6 +28,7 @@
   font: inherit;
 }
 
+/* Grade responsiva: ajusta a quantidade de cartões conforme a largura disponível. */
 .grade {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
@@ -35,6 +39,7 @@
   margin: 18px 0;
 }
 
+/* Mensagem de erro apresentada quando a API não pode ser consultada. */
 .erro {
   color: #a32626;
 }

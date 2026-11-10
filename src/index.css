@@ -1,7 +1,9 @@
+/* Faz o tamanho total dos elementos incluir bordas e espaçamentos internos. */
 * {
   box-sizing: border-box;
 }
 
+/* Aparência geral compartilhada por todas as páginas. */
 body {
   margin: 0;
   background: #f4f6f8;
@@ -9,12 +11,14 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Mantém a fonte de controles igual à fonte definida para o restante da página. */
 button,
 input,
 select {
   font: inherit;
 }
 
+/* Links usam a cor do elemento ao redor, salvo regra mais específica. */
 a {
   color: inherit;
 }

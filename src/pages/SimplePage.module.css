@@ -1,3 +1,4 @@
+/* Painel usado para apresentar conteúdo simples, como Sobre e página não encontrada. */
 .pagina {
   background: white;
   border: 1px solid #dce3ea;
@@ -5,6 +6,7 @@
   padding: 24px;
 }
 
+/* Cor do link exibido dentro do painel. */
 .pagina a {
   color: #243b53;
 }

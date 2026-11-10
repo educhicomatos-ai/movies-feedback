@@ -1,3 +1,4 @@
+/* Cartão que reúne as informações e ações de um jogo. */
 .card {
   overflow: hidden;
   background: white;
@@ -5,6 +6,7 @@
   border-radius: 8px;
 }
 
+/* Imagem do jogo em proporção horizontal, preenchendo a largura do cartão. */
 .imagem {
   display: block;
   width: 100%;
@@ -13,10 +15,12 @@
   background: #dce3ea;
 }
 
+/* Espaçamento dos textos e controles dentro do cartão. */
 .informacoes {
   padding: 14px;
 }
 
+/* Ajustes de margem e tamanho para título e textos descritivos. */
 .informacoes h2 {
   margin: 0 0 8px;
   font-size: 1.1rem;
@@ -27,6 +31,7 @@
   color: #617080;
 }
 
+/* Aparência compartilhada por botões de ação e link da página do jogo. */
 .botao, .linkJogo, .botaoEditar {
   display: inline-block;
   margin: 8px 8px 0 0;
@@ -40,6 +45,7 @@
   font: inherit;
 }
 
+/* Cores próprias para distinguir a ação de edição e o link externo. */
 .botaoEditar {
   background: #e7eef7;
   color: #243b53;
@@ -50,6 +56,7 @@
   color: #243b53;
 }
 
+/* Organiza a nota e as estrelas em uma linha que pode quebrar em telas estreitas. */
 .avaliacao {
   display: flex;
   align-items: center;
@@ -60,6 +67,7 @@
   font-size: 0.9rem;
 }
 
+/* Estilo base das estrelas e destaque para as estrelas já selecionadas. */
 .estrela, .estrelaAtiva {
   padding: 0 2px;
   border: 0;

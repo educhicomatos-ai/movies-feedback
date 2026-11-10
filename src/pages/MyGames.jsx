@@ -1,12 +1,17 @@
+// Estado local usado para controlar os campos e o jogo em edição.
 import { useState } from 'react'
+// Cartão de jogo compartilhado com o catálogo e estilos desta página.
 import GameCard from '../components/GameCard.jsx'
 import styles from './MyGames.module.css'
 
+// Recebe a lista de jogos e as funções de cadastro, edição, remoção e avaliação.
 function MyGames({ jogos, aoCriar, aoEditar, aoRemover, aoAvaliar }) {
+  // Guarda os valores dos campos e, quando aplicável, os dados em edição.
   const [titulo, setTitulo] = useState('')
   const [genero, setGenero] = useState('')
   const [jogoEmEdicao, setJogoEmEdicao] = useState(null)
 
+  // Valida o envio do formulário e envia os campos limpos para a aplicação principal.
   function criarJogo(event) {
     event.preventDefault()
     aoCriar({
@@ -19,6 +24,7 @@ function MyGames({ jogos, aoCriar, aoEditar, aoRemover, aoAvaliar }) {
     setGenero('')
   }
 
+  // Envia para a aplicação principal as alterações feitas no jogo selecionado.
   function salvarEdicao(event) {
     event.preventDefault()
     aoEditar(jogoEmEdicao)
@@ -34,6 +40,7 @@ function MyGames({ jogos, aoCriar, aoEditar, aoRemover, aoAvaliar }) {
 
       <form className={styles.formulario} onSubmit={criarJogo}>
         <h2>Adicionar um jogo</h2>
+        {/* Os valores destes campos são controlados pelos estados desta página. */}
         <label>
           Nome do jogo
           <input
@@ -55,6 +62,7 @@ function MyGames({ jogos, aoCriar, aoEditar, aoRemover, aoAvaliar }) {
         <button type="submit">Adicionar à lista</button>
       </form>
 
+      {/* O formulário de edição só aparece depois de o usuário escolher um jogo para editar. */}
       {jogoEmEdicao && (
         <form className={styles.formulario} onSubmit={salvarEdicao}>
           <h2>Editando jogo</h2>
@@ -87,6 +95,7 @@ function MyGames({ jogos, aoCriar, aoEditar, aoRemover, aoAvaliar }) {
         </form>
       )}
 
+      {/* Se não houver jogos, mostra uma orientação; caso contrário, cria um cartão para cada item. */}
       {jogos.length === 0 ? (
         <p className={styles.vazio}>Sua lista está vazia. Adicione jogos pelo catálogo.</p>
       ) : (

@@ -1,3 +1,4 @@
+/* Espaço entre o título/introdução e os formulários. */
 .topo {
   margin-bottom: 20px;
 }
@@ -10,6 +11,7 @@
   color: #617080;
 }
 
+/* Formulários de cadastro e edição em um painel organizado. */
 .formulario {
   display: grid;
   gap: 12px;
@@ -25,6 +27,7 @@
   font-size: 1.1rem;
 }
 
+/* Campos apresentados em coluna com espaço entre rótulo e entrada. */
 .formulario label {
   display: grid;
   gap: 6px;
@@ -38,6 +41,7 @@
   border-radius: 5px;
 }
 
+/* Aparência dos botões do formulário e organização dos botões de edição. */
 .formulario button {
   justify-self: start;
   padding: 9px 12px;
@@ -53,17 +57,20 @@
   gap: 8px;
 }
 
+/* Diferencia visualmente a ação de cancelar. */
 .formulario .botaoCancelar {
   background: #e7eef7;
   color: #243b53;
 }
 
+/* Grade responsiva para os cartões dos jogos da lista pessoal. */
 .grade {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   gap: 16px;
 }
 
+/* Painel exibido quando a lista ainda está vazia. */
 .vazio {
   padding: 18px;
   border-radius: 8px;

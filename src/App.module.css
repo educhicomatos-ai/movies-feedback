@@ -1,7 +1,9 @@
+/* Garante que a área principal ocupe pelo menos a altura da janela. */
 .app {
   min-height: 100vh;
 }
 
+/* Centraliza e limita a largura do conteúdo das páginas. */
 .conteudo {
   width: min(900px, 92%);
   margin: 32px auto;

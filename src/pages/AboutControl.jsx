@@ -1,5 +1,7 @@
+// Estilos compartilhados pelas páginas simples de texto.
 import styles from './SimplePage.module.css'
 
+// Apresenta ao usuário o objetivo e as características principais do projeto.
 function About() {
   return (
     <section className={styles.pagina}>

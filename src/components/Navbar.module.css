@@ -1,9 +1,11 @@
+/* Faixa colorida que forma o cabeçalho do site. */
 .cabecalho {
   background: #243b53;
   color: white;
   padding: 18px 0;
 }
 
+/* Alinha o logo e os links e mantém o conteúdo no mesmo limite das páginas. */
 .conteudo {
   width: min(900px, 92%);
   margin: auto;
@@ -13,6 +15,7 @@
   gap: 18px;
 }
 
+/* Aparência do nome do projeto no cabeçalho. */
 .logo {
   color: white;
   text-decoration: none;
@@ -20,12 +23,14 @@
   font-weight: bold;
 }
 
+/* Organiza os links de navegação e permite quebra de linha. */
 .menu {
   display: flex;
   gap: 18px;
   flex-wrap: wrap;
 }
 
+/* Cor e decoração dos links em estado normal, ativo ou ao passar o mouse. */
 .menu a {
   color: #e5edf5;
   text-decoration: none;
@@ -37,6 +42,7 @@
   text-decoration: underline;
 }
 
+/* Em telas estreitas, empilha o logo e o menu para caber melhor. */
 @media (max-width: 520px) {
   .conteudo {
     flex-direction: column;
